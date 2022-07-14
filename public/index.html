@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+
+
+  <title>時汐的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="時汐的博客">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="時汐的博客">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="mytimestide">
+<meta name="twitter:card" content="summary">
+
+
+    <link rel="icon" href="/favicon.png">
+
+
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">時汐的博客</a>
+      </h1>
+
+
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+
+          <a class="main-nav-link" href="/">主页</a>
+
+          <a class="main-nav-link" href="/archives">归档</a>
+
+      </nav>
+      <nav id="sub-nav">
+
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+
+    <article id="post-01-cookies" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/04/01-cookies/" class="article-date">
+  <time datetime="2022-07-04T06:44:39.983Z" itemprop="datePublished">2022-07-04</time>
+</a>
+
+  </div>
+  <div class="article-inner">
+
+
+      <header class="article-header">
+
+
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/04/01-cookies/">Cookies知识点记录</a>
+    </h1>
+
+
+      </header>
+
+    <div class="article-entry" itemprop="articleBody">
+
+        <h2 id="cookies-简介"><a href="#cookies-简介" class="headerlink" title="cookies 简介"></a>cookies 简介</h2><pre><code>    cookie是一个保存在客户机中的简单的文本文件, 这个文件与特定的 Web 文档关联在一起, 保存了该客户机访问这个Web
+文档时的信息, 当客户机再次访问这个 Web 文档时这些信息可供该文档使用。由于“Cookie”具有可以保存在客户机上的神奇特性,
+因此它可以帮助我们实现记录用户个人信息的功能, 而这一切都不必使用复杂的CGI等程序
+</code></pre>
+<h2 id="cookies-组成"><a href="#cookies-组成" class="headerlink" title="cookies 组成"></a>cookies 组成</h2><pre><code>Cookie是一段不超过4KB的小型文本数据，由一个名称（Name）、一个值（Value）和其它几个用于控制Cookie有效期、安全性、使用
+范围的可选属性组成。其中：
+(1)Name/Value：设置Cookie的名称及相对应的值，对于认证Cookie，Value值包括Web服务器所提供的访问令牌。
+
+(2)Expires属性：设置Cookie的生存期。有两种存储类型的Cookie：会话性与持久性。Expires属性缺省时，为会话性Cookie，仅
+保存在客户端内存中，并在用户关闭浏览器时失效；持久性Cookie会保存在用户的硬盘中，直至生存期到或用户直接在网页中单击“注销”
+等按钮结束会话时才会失效。
+
+(3)Path属性：定义了Web站点上可以访问该Cookie的目录。
+
+(4)Domain属性：指定了可以访问该 Cookie 的 Web 站点或域。Cookie 机制并未遵循严格的同源策略，允许一个子域可以设置或获
+取其父域的 Cookie。当需要实现单点登录方案时，Cookie 的上述特性非常有用，然而也增加了 Cookie受攻击的危险，比如攻击者可
+以借此发动会话定置攻击。因而，浏览器禁止在 Domain 属性中设置.org、.com 等通用顶级域名、以及在国家及地区顶级域下注册的
+二级域名，以减小攻击发生的范围。
+
+(5)Secure属性：指定是否使用HTTPS安全协议发送Cookie。使用HTTPS安全协议，可以保护Cookie在浏览器和Web服务器间的传输过
+程中不被窃取和篡改。该方法也可用于Web站点的身份鉴别，即在HTTPS的连接建立阶段，浏览器会检查Web网站的SSL证书的有效性。但
+是基于兼容性的原因（比如有些网站使用自签署的证书）在检测到SSL证书无效时，浏览器并不会立即终止用户的连接请求，而是显示安全
+风险信息，用户仍可以选择继续访问该站点。由于许多用户缺乏安全意识，因而仍可能连接到Pharming攻击所伪造的网站。
+
+(6)HTTPOnly 属性 ：用于防止客户端脚本通过document.cookie属性访问Cookie，有助于保护Cookie不被跨站脚本攻击窃取或篡
+改。但是，HTTPOnly的应用仍存在局限性，一些浏览器可以阻止客户端脚本对Cookie的读操作，但允许写操作；此外大多数浏览器仍允
+许通过XMLHTTP对象读取HTTP响应中的Set-Cookie头。
+</code></pre>
+
+
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/04/01-cookies/" data-id="cl56f898d0000ikzhgpuab1l2" class="article-share-link">Share</a>
+
+
+    </footer>
+  </div>
+
+</article>
+
+
+
+
+
+</section>
+
+          <aside id="sidebar">
+
+
+
+
+
+
+
+
+
+
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li></ul>
+    </div>
+  </div>
+
+
+
+
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+
+          <li>
+            <a href="/2022/07/04/01-cookies/">Cookies知识点记录</a>
+          </li>
+
+      </ul>
+    </div>
+  </div>
+
+
+</aside>
+
+      </div>
+      <footer id="footer">
+
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 mytimestide<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+
+    <a href="/" class="mobile-nav-link">主页</a>
+
+    <a href="/archives" class="mobile-nav-link">归档</a>
+
+</nav>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
